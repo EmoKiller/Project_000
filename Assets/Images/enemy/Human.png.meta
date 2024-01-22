@@ -1,0 +1,1235 @@
+fileFormatVersion: 2
+guid: 6c38d85dddb8d2e408ae8105f60a5d81
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Scamp_Head_front
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 1322
+        width: 190
+        height: 168
+      alignment: 9
+      pivot: {x: 0.813349, y: 0.4909464}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7226632dd35833b4ca881160779f4551
+      internalID: -1089389875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scamp_Head_Back
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 1204
+        width: 190
+        height: 165
+      alignment: 9
+      pivot: {x: 0.7976903, y: 0.49488193}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b4bf92cfc83b4c44a976d3e4ec827d7
+      internalID: 316544033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scamp_Body_front
+      rect:
+        serializedVersion: 2
+        x: 1758
+        y: 737
+        width: 116
+        height: 110
+      alignment: 9
+      pivot: {x: 0.39056817, y: 0.015958473}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56173ecb146741740aade2f73b5c6c6c
+      internalID: 427227251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scamp_Head_Bac
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 754
+        width: 118
+        height: 110
+      alignment: 9
+      pivot: {x: 0.38251984, y: 0.013906583}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f55a73657e726f48917c11e952fffc3
+      internalID: 1300820393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scamp_Hand
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 489
+        width: 83
+        height: 42
+      alignment: 9
+      pivot: {x: 0.013204919, y: 0.22762553}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8064588503f38844ca2fdade69f2bb34
+      internalID: 1643546706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scamp_Sword
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 593
+        width: 160
+        height: 67
+      alignment: 9
+      pivot: {x: 0.9097544, y: 0.55556387}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b414e469ba8901b4b864f3341d0cfa75
+      internalID: -1507553086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eyes-0
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 477
+        width: 36
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b698511be9f56042b204b22b8093a1a
+      internalID: 642932011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eyes-1
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 476
+        width: 50
+        height: 26
+      alignment: 9
+      pivot: {x: 0.6447986, y: 0.52531314}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daf2aa1da2dabf245ac96bc1f1c2bbb8
+      internalID: 1838644133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_0
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 477
+        width: 47
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb2f794a388ea194894db53a22fb4624
+      internalID: -965484438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scamp_Head_front_1
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 1153
+        width: 190
+        height: 168
+      alignment: 9
+      pivot: {x: 0.813349, y: 0.4909464}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06d5997f2c245254d906a67fe3f1b458
+      internalID: -1058113467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swordsman_Head_font
+      rect:
+        serializedVersion: 2
+        x: 1356
+        y: 1570
+        width: 194
+        height: 186
+      alignment: 9
+      pivot: {x: 0.7729939, y: 0.4498035}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a72e20f3eb09e24cb08e8254ead62a9
+      internalID: -696806740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swordsman_Head_Back
+      rect:
+        serializedVersion: 2
+        x: 1805
+        y: 1283
+        width: 193
+        height: 175
+      alignment: 9
+      pivot: {x: 0.8147188, y: 0.46844727}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e63ae7d0bffab84d92206fd0235e048
+      internalID: -1175125773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swordsman_Body_font
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 905
+        width: 125
+        height: 119
+      alignment: 9
+      pivot: {x: 0.38401368, y: 0.035719413}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 687fd82baaee39241b7629d0c3737178
+      internalID: 1802780893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swordsman_Weapon
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 544
+        width: 256
+        height: 54
+      alignment: 9
+      pivot: {x: 0.7781658, y: 0.49161106}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 600a78611c175554f8c17a0fa9f3c578
+      internalID: -142764730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swordsman_Head_font_1
+      rect:
+        serializedVersion: 2
+        x: 1414
+        y: 1229
+        width: 197
+        height: 167
+      alignment: 9
+      pivot: {x: 0.79373527, y: 0.49253908}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dea984396a4cafd4f90aaaeb3eb9fa31
+      internalID: -543830353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eyes-2
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 477
+        width: 33
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6838291826ad1404fa8e6ca76351208f
+      internalID: 1102243393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_1
+      rect:
+        serializedVersion: 2
+        x: 1525
+        y: 475
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bf1c692d986f4a4ca46e0e19af3d0d7
+      internalID: -1664588811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1851
+        width: 200
+        height: 197
+      alignment: 9
+      pivot: {x: 0.7969771, y: 0.49236968}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0eb842852a09cd418eba94874c173ec
+      internalID: 1927893109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_3
+      rect:
+        serializedVersion: 2
+        x: 633
+        y: 904
+        width: 124
+        height: 119
+      alignment: 9
+      pivot: {x: 0.37997586, y: 0.047549464}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f40f7fbdc9aff4041aa97f3710ef7b59
+      internalID: -729425909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_4
+      rect:
+        serializedVersion: 2
+        x: 963
+        y: 1050
+        width: 252
+        height: 137
+      alignment: 9
+      pivot: {x: 0.77380955, y: 0.6798755}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daa51e0d1ac31174f9a1760ce7d6730d
+      internalID: 996075669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_5
+      rect:
+        serializedVersion: 2
+        x: 1388
+        y: 947
+        width: 125
+        height: 120
+      alignment: 9
+      pivot: {x: 0.37184864, y: 0.036954243}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d51fefee3643614ca4ed8b15ec7c371
+      internalID: 1182853180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_6
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 1299
+        width: 195
+        height: 168
+      alignment: 9
+      pivot: {x: 0.7787394, y: 0.5000007}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c76f3bcf296c0a498eb1f788c29783a
+      internalID: -1447052927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_7
+      rect:
+        serializedVersion: 2
+        x: 1401
+        y: 1400
+        width: 189
+        height: 168
+      alignment: 9
+      pivot: {x: 0.745768, y: 0.46285066}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13e443a3f871c054cbf5858f2317e1b3
+      internalID: 1231233740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_8
+      rect:
+        serializedVersion: 2
+        x: 1166
+        y: 813
+        width: 128
+        height: 118
+      alignment: 9
+      pivot: {x: 0.38747787, y: 0.08500232}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23faeb85995a69748a37415149aab184
+      internalID: 2058664007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_9
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 867
+        width: 123
+        height: 117
+      alignment: 9
+      pivot: {x: 0.38206816, y: 0.06193764}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: feb4a9e8fa3707c489aee86856e3ef10
+      internalID: -1889224111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_10
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 1173
+        width: 256
+        height: 159
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89f2dedd0ebfcb84081ccb8492dd61be
+      internalID: -1209449039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_11
+      rect:
+        serializedVersion: 2
+        x: 1922
+        y: 655
+        width: 126
+        height: 106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edaf408eacef32a4ab6482c9cc454599
+      internalID: 2134152354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_12
+      rect:
+        serializedVersion: 2
+        x: 1875
+        y: 762
+        width: 131
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8887c0c7e756bf741a2a9488a53fe538
+      internalID: 284861929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_13
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 1007
+        width: 149
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a541e0c5b84cc34e8a4e1e0b1daa58e
+      internalID: 1106094029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_14
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 492
+        width: 86
+        height: 43
+      alignment: 9
+      pivot: {x: 0.02219657, y: 0.23455526}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b08f16a682534c34bacc77b967276801
+      internalID: 437560550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_15
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 1675
+        width: 228
+        height: 199
+      alignment: 9
+      pivot: {x: 0.45126665, y: 0.14744315}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3bedb0e708a4ac4da07100b663585a7
+      internalID: -981032986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_16
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 798
+        width: 127
+        height: 118
+      alignment: 9
+      pivot: {x: 0.36772865, y: 0.047340006}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8a56fad87e7ddb44b04fc860e1a6b83
+      internalID: 488848303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_17
+      rect:
+        serializedVersion: 2
+        x: 1696
+        y: 566
+        width: 121
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f28395da1075c154799c2a8940fd889e
+      internalID: 1004195981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 524
+        width: 153
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e0ac240b5e25ef44b9cdc1058dca68c
+      internalID: 1235854269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_19
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 614
+        width: 176
+        height: 77
+      alignment: 9
+      pivot: {x: 0.50441223, y: 0.16868246}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 160db8d6515647748a20e57c3841b3b7
+      internalID: 551469939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_20
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 505
+        width: 179
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b62265d370f8c9e43b0a086370713a1c
+      internalID: 1316404920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_21
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 611
+        width: 173
+        height: 72
+      alignment: 9
+      pivot: {x: 0.9009195, y: 0.45077768}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2bd9f005bb7c81478ca218d4a151c43
+      internalID: 683238948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_22
+      rect:
+        serializedVersion: 2
+        x: 1469
+        y: 1077
+        width: 160
+        height: 149
+      alignment: 9
+      pivot: {x: 0.9652948, y: 0.5060642}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ec0568169abbd44581f78b34bbba2ed
+      internalID: 1622876711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_23
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 1010
+        width: 138
+        height: 129
+      alignment: 9
+      pivot: {x: 0.4899259, y: 0.16592005}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 238eebe8f54f80a4b9ca9ae0c1ab431f
+      internalID: -108649890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_24
+      rect:
+        serializedVersion: 2
+        x: 1975
+        y: 515
+        width: 70
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eac9f7ca35efc7a4d91e2007a93233f6
+      internalID: -1263935818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_25
+      rect:
+        serializedVersion: 2
+        x: 1599
+        y: 479
+        width: 66
+        height: 27
+      alignment: 9
+      pivot: {x: 0.11777566, y: 0.4466112}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d59eee1b5aab5f44288d32cf66a4e2ce
+      internalID: -762454800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_26
+      rect:
+        serializedVersion: 2
+        x: 1669
+        y: 477
+        width: 36
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a894a7918766e07478b0ee42a0bdefc0
+      internalID: 1189010107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_27
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 668
+        width: 231
+        height: 102
+      alignment: 9
+      pivot: {x: 0.9252063, y: 0.4999988}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe1e5c7e2ff4d9b49a067e408fee54a1
+      internalID: -275777700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_28
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 476
+        width: 54
+        height: 26
+      alignment: 9
+      pivot: {x: 0.13809544, y: 0.65659153}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6d118aa8a9daa842a1b0277f5505826
+      internalID: -1284241124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_29
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 475
+        width: 81
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3aa8eeda73593e446bc755eee50b38d7
+      internalID: -488615280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_30
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 474
+        width: 31
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49f268ce4ffc6424e8cb362f42400867
+      internalID: 2124414978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_31
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 1706
+        width: 226
+        height: 194
+      alignment: 9
+      pivot: {x: 0.46325737, y: 0.13617635}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd4bb2936fb879a4f8b933110c91264c
+      internalID: 64608092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_32
+      rect:
+        serializedVersion: 2
+        x: 1466
+        y: 635
+        width: 250
+        height: 82
+      alignment: 9
+      pivot: {x: 0.49675927, y: 0.31223726}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a21b9897382f994fbf578c640a3cb5e
+      internalID: 1604332288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_33
+      rect:
+        serializedVersion: 2
+        x: 1569
+        y: 565
+        width: 125
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 469dd0d47db8df34eaaa103b934f008a
+      internalID: 1016379020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Human_34
+      rect:
+        serializedVersion: 2
+        x: 1823
+        y: 513
+        width: 151
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 405ba4ac376cdcd4c9846df9dd41d518
+      internalID: -1608397690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 905b8daef409d3b48aeeffe0b525e628
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Scamp_Sword: -1507553086
+      Human_32: 1604332288
+      Scamp_Hand: 1643546706
+      Scamp_Head_Bac: 1300820393
+      Human_9: -1889224111
+      Scamp_Head_Back: 316544033
+      Human_25: -762454800
+      Human_15: -981032986
+      Human_8: 2058664007
+      Human_12: 284861929
+      Human_16: 488848303
+      Human_24: -1263935818
+      eyes-2: 1102243393
+      Human_11: 2134152354
+      Human_27: -275777700
+      Swordsman_Head_Back: -1175125773
+      Human_17: 1004195981
+      Scamp_Body_front: 427227251
+      Scamp_Head_front_1: -1058113467
+      Eyes-0: 642932011
+      Human_26: 1189010107
+      Human_34: -1608397690
+      Human_5: 1182853180
+      Human_0: -965484438
+      eyes-1: 1838644133
+      Human_20: 1316404920
+      Swordsman_Body_font: 1802780893
+      Human_30: 2124414978
+      Human_28: -1284241124
+      Human_1: -1664588811
+      Human_19: 551469939
+      Swordsman_Weapon: -142764730
+      Human_23: -108649890
+      Human_10: -1209449039
+      Human_2: 1927893109
+      Human_31: 64608092
+      Human_6: -1447052927
+      Human_29: -488615280
+      Human_7: 1231233740
+      Human_18: 1235854269
+      Human_3: -729425909
+      Human_4: 996075669
+      Swordsman_Head_font_1: -543830353
+      Human_14: 437560550
+      Swordsman_Head_font: -696806740
+      Scamp_Head_front: -1089389875
+      Human_33: 1016379020
+      Human_21: 683238948
+      Human_22: 1622876711
+      Human_13: 1106094029
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
