@@ -7,5 +7,6 @@ public interface IMoveAble
     Transform ObjectAnimationForRotation { get; set; }
     Transform directionTarget { get; set; }
     void MoveDirection(Vector3 location);
+    void RotateDirection(Vector3 direction);
 
 }

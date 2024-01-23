@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using static UnityEditor.FilePathAttribute;
+using UnityEngine.UIElements;
+using UnityEngine.Events;
 
 public static class GameUtilities
 {
@@ -29,33 +32,18 @@ public static class GameUtilities
             yield return null;
         }
     }
-    public static void LoopDelayCall(this MonoBehaviour mono, bool condition, float endtime, Action callBack)
+    public static void LoopCondition(this MonoBehaviour mono, bool condition, float waitForSeconds, Action callBack)
     {
-        mono.StartCoroutine(IELoopDelayCall(condition, endtime, callBack));
+        mono.StartCoroutine(IELoopCondition(condition, waitForSeconds, callBack));
     }
-    public static IEnumerator IELoopDelayCall(bool condition, float endtime, Action callBack)
+    public static IEnumerator IELoopCondition(bool condition, float waitForSeconds, Action callBack)
     {
-        float StartTime = 0;
-        while (StartTime <= endtime)
+        while (condition == true)
         {
             callBack?.Invoke();
-            StartTime += Time.deltaTime;
-            yield return null;
+            yield return new WaitForSeconds(waitForSeconds);
         }
     }
-    public static void LoopCondition(this MonoBehaviour mono, bool condition, Action callBack)
-    {
-        mono.StartCoroutine(IELoopCondition(condition, callBack));
-    }
-    public static IEnumerator IELoopCondition(bool condition, Action callBack)
-    {
-        while (condition)
-        {
-            callBack?.Invoke();
-            yield return null;
-        }
-    }
-
     public static void WaitDelayCall(this MonoBehaviour mono, int repeat, float waittime, Action callBack)
     {
         mono.StartCoroutine(IEWaitDelayCall(repeat, waittime, callBack));
@@ -70,6 +58,15 @@ public static class GameUtilities
             yield return new WaitForSeconds(waittime);
         }
     }
+    //public static void WaitUntil(this MonoBehaviour mono, bool condition, UnityAction action)
+    //{
+    //    mono.StartCoroutine(IEWaitUntil(condition, action));
+    //}
+    //public static IEnumerator IEWaitUntil(bool condition, UnityAction action)
+    //{
+    //    yield return new WaitUntil(() => condition);
+    //    action?.Invoke();
+    //}
     public static void ReSetEulerAngle(this Transform trans)
     {
         trans.eulerAngles = new Vector3(15, 0, 0);

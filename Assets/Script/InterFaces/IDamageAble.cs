@@ -1,8 +1,11 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public interface IDamageAble 
 {
-    SlashCollider slashCollider { get; set; }
-    float maxHealth { get; set; }
+     SlashCollider slashCollider { get; set; }
+    float MaxHealth { get; set; }
     float CurrentHealth { get; set; }
     bool Alive { get; }
     void TakeDamage(float damage);
