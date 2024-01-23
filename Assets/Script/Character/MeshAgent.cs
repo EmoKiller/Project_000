@@ -33,12 +33,13 @@ public class MeshAgent : MonoBehaviour
     }
     private void OnDrawGizmos()
     {
-        if (!ShowPath || path == null)
+        if (!ShowPath || path == null || AgentBody.path == null)
             return;
-        for (int i = 0; i < AgentBody.path.corners.Length; i++)
+        NavMeshPath paths = AgentBody.path;
+        Gizmos.color = Color.red;
+        for (int i = 0; i < paths.corners.Length - 1; i++)
         {
-            Gizmos.color = Color.red;
-            Gizmos.DrawLine(transform.position, AgentBody.path.corners[i]);
+            Gizmos.DrawLine(paths.corners[i], paths.corners[i+1]);
         }
 
     }

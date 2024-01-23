@@ -16,7 +16,7 @@ public class Player : CharacterBrain
         {
             CurrentHealth = 0;
         }
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(0))
         {
             GameUtilities.ScreenRayCastOnWorld(MoveDirection);
         }
