@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Player : CharacterBrain
 {
@@ -19,6 +20,12 @@ public class Player : CharacterBrain
         if (Input.GetMouseButtonDown(0))
         {
             GameUtilities.ScreenRayCastOnWorld(MoveDirection);
+        }
+        if (Input.GetMouseButton(1))
+        {
+            //Debug.DrawLine(transform.position, GameUtilities.ScreenRayCastOnWorld(), Color.blue);
+            //Debug.DrawLine(transform.position, , Color.blue);
+            agent.Raycast();
         }
 
     }

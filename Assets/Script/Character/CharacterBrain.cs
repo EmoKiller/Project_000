@@ -17,7 +17,6 @@ public class CharacterBrain : SerializedMonoBehaviour, IDamageAble, IMoveAble
 
     private void Start()
     {
-        agent.Initialized();
     }
 
     #region IDamageAble
@@ -37,26 +36,29 @@ public class CharacterBrain : SerializedMonoBehaviour, IDamageAble, IMoveAble
     [Button]
     public void MoveDirection(Vector3 location)
     {
-        agent.AgentBody.isStopped = false;
         agent.MoveToDirection(location);
-        StartCoroutine(LoopOnMoveToDirection(location));
+        if (agent.IsMove == true)
+            return;
+        StartCoroutine(CheckDestination());
     }
-    IEnumerator LoopOnMoveToDirection(Vector3 location)
+    IEnumerator CheckDestination()
     {
-        yield return new WaitUntil(() => CheckDistanceTo(location) || !Alive);
+        agent.IsMove = true;
+        yield return new WaitUntil(() => CheckLastPath() || !Alive );
         agent.AgentBody.isStopped = true;
+        agent.IsMove = false;
     }
 
     public void RotateDirection(Vector3 direction)
     {
         throw new System.NotImplementedException();
     }
-
-    #endregion
-    protected bool CheckDistanceTo(Vector3 location)
+    protected bool CheckLastPath()
     {
-        return Vector3.Distance(transform.position, location) <= agent.AgentBody.radius;
+        return Vector3.Distance(transform.position, agent.LastPath) <= agent.AgentBody.radius;
     }
+    #endregion
+    
     protected float GetDistanceToTarget()
     {
         return Vector3.Distance(transform.position, directionTarget.position);

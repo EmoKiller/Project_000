@@ -101,4 +101,13 @@ public static class GameUtilities
             action?.Invoke(new Vector3(raycastHit.point.x, 0, raycastHit.point.z));
         }
     }
+    public static Vector3 ScreenRayCastOnWorld(out Ray rays)
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out RaycastHit raycastHit)) 
+        {
+        }
+        rays = ray;
+        return raycastHit.point;
+    }
 }
