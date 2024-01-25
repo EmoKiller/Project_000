@@ -1,8 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.InputSystem.HID;
+using UnityEngine.UIElements;
 
 public class MeshAgent : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class MeshAgent : MonoBehaviour
     public bool IsMove = false;
     [Header("Debuger")]
     public bool ShowPath = true;
-    public void MoveToDirection(Vector3 positon)
+    public void MoveToDestination(Vector3 positon)
     {
         AgentBody.isStopped = false;
         LastPath = positon;
@@ -31,20 +32,30 @@ public class MeshAgent : MonoBehaviour
     {
         Speed = valueSpeed;
     }
-    public void Raycast()
+    public void RaycastReflect(Vector3 targetPosition)
     {
-        if (AgentBody.Raycast(GameUtilities.ScreenRayCastOnWorld(out Ray rays), out NavMeshHit raycastHit))
+        if (AgentBody.Raycast(targetPosition, out NavMeshHit raycastHit))
         {
-            Vector3 reflectDirection = Vector3.Reflect(rays.direction, raycastHit.normal);
-            Debug.DrawRay(raycastHit.position, reflectDirection * 10f, Color.red, 2f);
+            if (raycastHit.hit)
+            {
+                float distance = Vector3.Distance(transform.position, targetPosition);
+                float distanceReflect = distance - Vector3.Distance(transform.position, raycastHit.position);
+                Debug.DrawLine(transform.position, raycastHit.position, Color.red);
+                Debug.DrawLine(raycastHit.position, GameUtilities.MousePositionInWorld(), Color.blue);
+                Vector3 reflectDirection = Vector3.Reflect(raycastHit.position - transform.position, raycastHit.normal);
+                Debug.DrawRay(raycastHit.position, reflectDirection.normalized * distanceReflect, Color.red, 0.5f);
+                return;
+            }
 
-            Debug.DrawRay(transform.position, rays.direction, Color.blue);
-            //if (raycastHit.hit)
-            //{
-            //    Debug.DrawLine(transform.position,raycastHit.position, Color.red);
-            //}
         }
     }
+    //IEnumerator CheckDestination(Func<bool> predicate)
+    //{
+    //    IsMove = true;
+    //    yield return new WaitUntil(predicate);
+    //    AgentBody.isStopped = true;
+    //    IsMove = false;
+    //}
     private void OnDrawGizmos()
     {
         if (!ShowPath || AgentBody.path == null)

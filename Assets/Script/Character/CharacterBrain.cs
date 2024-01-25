@@ -1,7 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using Sirenix.OdinInspector;
+using System.Collections;
+using UnityEngine;
+using UnityEngine.AI;
+using UnityEngine.Events;
+
 public class CharacterBrain : SerializedMonoBehaviour, IDamageAble, IMoveAble
 {
     [field: SerializeField] public MeshAgent agent { get; set; }
@@ -34,21 +36,41 @@ public class CharacterBrain : SerializedMonoBehaviour, IDamageAble, IMoveAble
 
     #region IMoveAble
     [Button]
-    public void MoveDirection(Vector3 location)
+    public void MoveDestination(Vector3 positon, UnityAction action = null)
     {
-        agent.MoveToDirection(location);
-        if (agent.IsMove == true)
-            return;
-        StartCoroutine(CheckDestination());
+        agent.MoveToDestination(positon);
+        if (agent.IsMove == true) return;
+        StartCoroutine(CheckDestination(action));
     }
-    IEnumerator CheckDestination()
+    public void DashMoveDirection(Vector3 positon)
+    {
+        if (agent.IsMove == true) return;
+        agent.SetSpeed(25);
+        if (agent.AgentBody.Raycast(positon, out NavMeshHit raycastHit))
+        {
+            if (raycastHit.hit)
+            {
+                float distance = Vector3.Distance(transform.position, positon);
+                float distanceReflect = distance - Vector3.Distance(transform.position, raycastHit.position);
+                Debug.DrawLine(transform.position, raycastHit.position, Color.red);
+                Debug.DrawLine(raycastHit.position, GameUtilities.MousePositionInWorld(), Color.blue);
+                Vector3 reflectDirection = Vector3.Reflect(raycastHit.position - transform.position, raycastHit.normal);
+                Debug.DrawRay(raycastHit.position, reflectDirection.normalized * distanceReflect, Color.cyan, 0.5f);
+                MoveDestination(raycastHit.position, () => { DashMoveDirection(transform.position + reflectDirection.normalized * distanceReflect); });
+            }
+            return;
+        }
+        MoveDestination(positon);
+    }
+    IEnumerator CheckDestination(UnityAction action = null)
     {
         agent.IsMove = true;
-        yield return new WaitUntil(() => CheckLastPath() || !Alive );
+        yield return new WaitUntil(() => CheckLastPath() || !Alive);
         agent.AgentBody.isStopped = true;
         agent.IsMove = false;
+        agent.SetSpeed(4);
+        action?.Invoke();
     }
-
     public void RotateDirection(Vector3 direction)
     {
         throw new System.NotImplementedException();
@@ -58,7 +80,7 @@ public class CharacterBrain : SerializedMonoBehaviour, IDamageAble, IMoveAble
         return Vector3.Distance(transform.position, agent.LastPath) <= agent.AgentBody.radius;
     }
     #endregion
-    
+
     protected float GetDistanceToTarget()
     {
         return Vector3.Distance(transform.position, directionTarget.position);

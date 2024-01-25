@@ -3,8 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using static UnityEditor.FilePathAttribute;
-using UnityEngine.UIElements;
 using UnityEngine.Events;
 
 public static class GameUtilities
@@ -93,12 +91,12 @@ public static class GameUtilities
     {
         //trans.transform.DOJump(new Vector3(UnityEngine.Random.Range(-2f, 2f), 0.5f, UnityEngine.Random.Range(-0.1f, -2f)) + trans.transform.position, UnityEngine.Random.Range(0.5f, 4f), 1, 0.3f);
     }
-    public static void ScreenRayCastOnWorld(Action<Vector3> action)
+    public static void ScreenRayCastOnWorld(UnityAction<Vector3, UnityAction> action = null)
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out RaycastHit raycastHit))
         {
-            action?.Invoke(new Vector3(raycastHit.point.x, 0, raycastHit.point.z));
+            action?.Invoke(new Vector3(raycastHit.point.x, 0, raycastHit.point.z),null);
         }
     }
     public static Vector3 ScreenRayCastOnWorld(out Ray rays)
@@ -108,6 +106,14 @@ public static class GameUtilities
         {
         }
         rays = ray;
+        return raycastHit.point;
+    }
+    public static Vector3 MousePositionInWorld()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out RaycastHit raycastHit))
+        {
+        }
         return raycastHit.point;
     }
 }
