@@ -18,10 +18,9 @@ public class CameraFollow : MonoBehaviour
     [SerializeField] private float smooth;
     [SerializeField] private Vector3 offset;
     private Vector3 vecref = Vector3.zero;
-    private void Awake()
-    {
-        
-    }
+
+    float mouseX => Input.GetAxis("Mouse X");
+    float mouseY => Input.GetAxis("Mouse Y");
     public void Init()
     {
         TargetPlayer();
@@ -35,6 +34,8 @@ public class CameraFollow : MonoBehaviour
     private void Update()
     {
         transform.position = Vector3.SmoothDamp(transform.position, target.position + offset, ref vecref, smooth);
+        transform.eulerAngles = new Vector3(mouseX,mouseY,0);
+
     }
     private void OnBossDeadth()
     {

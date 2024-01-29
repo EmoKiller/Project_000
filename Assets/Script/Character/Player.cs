@@ -10,10 +10,11 @@ public class Player : CharacterBrain
 
     public float Horizontal => Input.GetAxis("Horizontal");
     public float Vertical => Input.GetAxis("Vertical");
-    [field: SerializeField] public virtual StateMachine<Player> StateMachine { get; set; }
+    [field: SerializeField] public StateMachine<Player> StateMachine { get; private set; }
     public override bool Alive => CurrentHealth > 0;
     private void Awake()
     {
+        StateMachine = new StateMachine<Player>();
         PlayerIdle = new PlayerIdle(this, StateMachine);
     }
     private void Start()
@@ -24,6 +25,6 @@ public class Player : CharacterBrain
     {
         if (!Alive)
             return;
-        StateMachine.CurrentEnemyState.FrameUpdate();
+        StateMachine.CurrentState.FrameUpdate();
     }
 }

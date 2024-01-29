@@ -6,7 +6,7 @@ using UnityEngine.AI;
 using UnityEngine.Events;
 using UnityEngine.UIElements;
 
-public class CharacterBrain : SerializedMonoBehaviour, IDamageAble, IMoveAble
+public class CharacterBrain : SerializedMonoBehaviour, IDamageAble, IMoveAble 
 {
     [field: SerializeField] public MeshAgent agent { get; set; }
     [field: SerializeField] public Transform directionTarget { get; set; }
@@ -17,14 +17,6 @@ public class CharacterBrain : SerializedMonoBehaviour, IDamageAble, IMoveAble
     [field: SerializeField] public float MaxHealth { get; set; } = 100f;
     [field: SerializeField] public float CurrentHealth { get; set; } = 100f;
     [field: SerializeField] public virtual bool Alive { get; }
-    #region StateMachine Variables
-    #endregion
-    private void Awake()
-    {
-    }
-    private void Start()
-    {
-    }
 
     #region IDamageAble
     public virtual void TakeDamage(float damage)

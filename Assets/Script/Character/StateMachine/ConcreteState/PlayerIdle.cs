@@ -31,14 +31,12 @@ public class PlayerIdle : State<Player>
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            character.DashMoveDirection(character.transform.position + character.directionTarget.localPosition * 5);
+            character.DashMoveDirection(character.transform.position + character.transform.forward * 5);
             character.agent.SetSpeed(15);
         }
         if (character.Horizontal != 0 || character.Vertical != 0)
         {
             character.agent.MoveToDirection(new Vector3(character.Horizontal, 0, character.Vertical));
-            character.directionTarget.localPosition = new Vector3(character.Horizontal, 0, character.Vertical).normalized;
-
         }
     }
 
@@ -46,4 +44,5 @@ public class PlayerIdle : State<Player>
     {
         base.PhysicsUpdate();
     }
+
 }
