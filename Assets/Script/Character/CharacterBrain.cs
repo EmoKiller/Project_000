@@ -1,13 +1,14 @@
 using Sirenix.OdinInspector;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
+using UnityEngine.UIElements;
 
 public class CharacterBrain : SerializedMonoBehaviour, IDamageAble, IMoveAble
 {
     [field: SerializeField] public MeshAgent agent { get; set; }
-    [field: SerializeField] public Transform ObjectAnimationForRotation { get; set; }
     [field: SerializeField] public Transform directionTarget { get; set; }
     [field: SerializeField] public SlashCollider slashCollider { get; set; }
 
@@ -16,7 +17,11 @@ public class CharacterBrain : SerializedMonoBehaviour, IDamageAble, IMoveAble
     [field: SerializeField] public float MaxHealth { get; set; } = 100f;
     [field: SerializeField] public float CurrentHealth { get; set; } = 100f;
     [field: SerializeField] public virtual bool Alive { get; }
-
+    #region StateMachine Variables
+    #endregion
+    private void Awake()
+    {
+    }
     private void Start()
     {
     }
@@ -42,22 +47,32 @@ public class CharacterBrain : SerializedMonoBehaviour, IDamageAble, IMoveAble
         if (agent.IsMove == true) return;
         StartCoroutine(CheckDestination(action));
     }
-    public void DashMoveDirection(Vector3 positon)
+    public void DashMoveDirection(Vector3 position)
+    {
+        if (agent.IsMove == true) return;
+        agent.SetSpeed(10);
+        if (agent.AgentBody.Raycast(position, out NavMeshHit raycastHit))
+        {
+            Debug.DrawLine(transform.position, raycastHit.position, Color.red);
+            Debug.DrawLine(raycastHit.position, GameUtilities.MousePositionInWorld(), Color.blue);
+            MoveDestination(raycastHit.position);
+            return;
+        }
+        MoveDestination(position);
+    }
+    public void DashMoveDirectionReflect(Vector3 positon)
     {
         if (agent.IsMove == true) return;
         agent.SetSpeed(25);
         if (agent.AgentBody.Raycast(positon, out NavMeshHit raycastHit))
         {
-            if (raycastHit.hit)
-            {
-                float distance = Vector3.Distance(transform.position, positon);
-                float distanceReflect = distance - Vector3.Distance(transform.position, raycastHit.position);
-                Debug.DrawLine(transform.position, raycastHit.position, Color.red);
-                Debug.DrawLine(raycastHit.position, GameUtilities.MousePositionInWorld(), Color.blue);
-                Vector3 reflectDirection = Vector3.Reflect(raycastHit.position - transform.position, raycastHit.normal);
-                Debug.DrawRay(raycastHit.position, reflectDirection.normalized * distanceReflect, Color.cyan, 0.5f);
-                MoveDestination(raycastHit.position, () => { DashMoveDirection(transform.position + reflectDirection.normalized * distanceReflect); });
-            }
+            float distance = Vector3.Distance(transform.position, positon);
+            float distanceReflect = distance - Vector3.Distance(transform.position, raycastHit.position);
+            Vector3 reflectDirection = Vector3.Reflect(raycastHit.position - transform.position, raycastHit.normal);
+            Debug.DrawLine(transform.position, raycastHit.position, Color.red);
+            Debug.DrawLine(raycastHit.position, GameUtilities.MousePositionInWorld(), Color.blue);
+            Debug.DrawRay(raycastHit.position, reflectDirection.normalized * distanceReflect, Color.cyan, 0.5f);
+            MoveDestination(raycastHit.position, () => { DashMoveDirectionReflect(transform.position + reflectDirection.normalized * distanceReflect); });
             return;
         }
         MoveDestination(positon);

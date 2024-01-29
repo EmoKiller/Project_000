@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
+
     [Header("Shaker")]
     [SerializeField] private Vector3 _positonStrength;
     [SerializeField] private float timeDurationPositonStrength;
@@ -19,13 +20,7 @@ public class CameraFollow : MonoBehaviour
     private Vector3 vecref = Vector3.zero;
     private void Awake()
     {
-        //EventDispatcher.Addlistener<Color32>(Script.CameraFollow, Events.CameraChangeColorBackGround, ChangeColorBackGround);
-        //EventDispatcher.Addlistener<Transform>(Script.CameraFollow, Events.CameraChangeTarget, CameraChangeTarget);
-        //EventDispatcher.Addlistener(Script.CameraFollow, Events.CameraTargetPlayer, TargetPlayer);
-        //EventDispatcher.Addlistener(Script.CameraFollow, Events.CameraDefault, CameraDefault);
-        //EventDispatcher.Addlistener(Script.CameraFollow, Events.CameraFocus, CameraFocus);
-        //EventDispatcher.Addlistener(Script.CameraFollow, Events.OnAttackHitEnemy, VibrateCamera);
-        //ObseverConstants.OnBossDeath.AddListener(OnBossDeadth);
+        
     }
     public void Init()
     {

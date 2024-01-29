@@ -1,31 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class Player : CharacterBrain
 {
-    protected float horizontal => Input.GetAxis("Horizontal");
-    protected float vertical => Input.GetAxis("Vertical");
+    public PlayerIdle PlayerIdle { get; private set; }
+
+    public float Horizontal => Input.GetAxis("Horizontal");
+    public float Vertical => Input.GetAxis("Vertical");
+    [field: SerializeField] public virtual StateMachine<Player> StateMachine { get; set; }
     public override bool Alive => CurrentHealth > 0;
+    private void Awake()
+    {
+        PlayerIdle = new PlayerIdle(this, StateMachine);
+    }
+    private void Start()
+    {
+        StateMachine.Initalize(PlayerIdle);
+    }
     private void Update()
     {
         if (!Alive)
             return;
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            CurrentHealth = 0;
-        }
-        if (Input.GetMouseButtonDown(0))
-        {
-            GameUtilities.ScreenRayCastOnWorld(MoveDestination);
-        }
-        if (Input.GetMouseButton(1))
-        {
-            //Debug.DrawLine(transform.position, GameUtilities.ScreenRayCastOnWorld(), Color.blue);
-            //Debug.DrawLine(transform.position, , Color.blue);
-            DashMoveDirection(GameUtilities.MousePositionInWorld());
-        }
-
+        StateMachine.CurrentEnemyState.FrameUpdate();
     }
 }

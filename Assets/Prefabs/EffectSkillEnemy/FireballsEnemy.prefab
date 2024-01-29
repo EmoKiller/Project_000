@@ -11,8 +11,6 @@ GameObject:
   - component: {fileID: 2067522765506015622}
   - component: {fileID: 2067522765506015625}
   - component: {fileID: 2067522765506015624}
-  - component: {fileID: 8954763190688638179}
-  - component: {fileID: 2067522765506015627}
   - component: {fileID: 2067522765506015626}
   m_Layer: 8
   m_Name: FireballsEnemy
@@ -66,38 +64,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 1
---- !u!114 &8954763190688638179
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2067522765506015629}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68fb8e771ebc52e44a1db2974d3ef3e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 1
-  slash: {fileID: 2067522765506015627}
-  detectedEnemy: {fileID: 0}
-  boxCollider: {fileID: 2067522765506015625}
-  _animator: {fileID: 0}
-  speedSkill: 5
-  isBoomer: 0
-  _meshRender: {fileID: 0}
---- !u!114 &2067522765506015627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2067522765506015629}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c657a5389e890e44c8427f51369afa04, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &2067522765506015626
 SpriteRenderer:
   m_ObjectHideFlags: 0
