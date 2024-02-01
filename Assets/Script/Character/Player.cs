@@ -1,24 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class Player : CharacterBrain
 {
+    [SerializeField] private CameraFollow cameraFollow;
     public PlayerIdle PlayerIdle { get; private set; }
-
-    public float Horizontal => Input.GetAxis("Horizontal");
-    public float Vertical => Input.GetAxis("Vertical");
+    public InputManager InputManager { get; private set; }
     [field: SerializeField] public StateMachine<Player> StateMachine { get; private set; }
     public override bool Alive => CurrentHealth > 0;
     private void Awake()
     {
+        cameraFollow = FindObjectOfType<CameraFollow>();
+        InputManager = GetComponent<InputManager>();
         StateMachine = new StateMachine<Player>();
         PlayerIdle = new PlayerIdle(this, StateMachine);
+
     }
     private void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         StateMachine.Initalize(PlayerIdle);
     }
     private void Update()
@@ -26,5 +26,22 @@ public class Player : CharacterBrain
         if (!Alive)
             return;
         StateMachine.CurrentState.FrameUpdate();
+    }
+    public Vector2 MovementInput()
+    {
+        return InputManager.MovementInput;
+    }
+    public void PlayerMove()
+    {
+        if (MovementInput().x != 0 || MovementInput().y != 0)
+        {
+            Vector3 vec = CameraFollow.instance.transform.forward;
+            vec.y = 0;
+            Agent.MoveToDirection(vec.normalized * MovementInput().y + CameraFollow.instance.transform.right * MovementInput().x);
+        }
+        if (MovementInput().y == 0)
+        {
+
+        }
     }
 }

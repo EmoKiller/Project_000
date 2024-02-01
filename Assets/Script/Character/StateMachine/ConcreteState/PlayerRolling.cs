@@ -1,12 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.AI;
 
-public class PlayerIdle : State<Player>
+public class PlayerRolling : State<Player>
 {
-    public PlayerIdle(Player character, StateMachine<Player> characterStateMachine) : base(character, characterStateMachine)
+    public PlayerRolling(Player character, StateMachine<Player> characterStateMachine) : base(character, characterStateMachine)
     {
     }
 
@@ -23,7 +21,6 @@ public class PlayerIdle : State<Player>
     public override void FrameUpdate()
     {
         base.FrameUpdate();
-        character.PlayerMove();
     }
 
     public override void PhysicsUpdate()

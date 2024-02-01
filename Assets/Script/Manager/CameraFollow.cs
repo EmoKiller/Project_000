@@ -2,10 +2,11 @@ using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class CameraFollow : MonoBehaviour
 {
-
+    public static CameraFollow instance;
     [Header("Shaker")]
     [SerializeField] private Vector3 _positonStrength;
     [SerializeField] private float timeDurationPositonStrength;
@@ -18,9 +19,28 @@ public class CameraFollow : MonoBehaviour
     [SerializeField] private float smooth;
     [SerializeField] private Vector3 offset;
     private Vector3 vecref = Vector3.zero;
-
-    float mouseX => Input.GetAxis("Mouse X");
-    float mouseY => Input.GetAxis("Mouse Y");
+    public float MouseX;
+    public float MouseY;
+    float mouseX
+    {
+        get { return MouseX += Input.GetAxis("Mouse X"); }
+    } 
+    float mouseY 
+    {
+        get { return MouseY -= Input.GetAxis("Mouse Y"); }
+    }
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
+    }
+    private void LateUpdate()
+    {
+        transform.position = Vector3.SmoothDamp(transform.position, target.position + offset, ref vecref, smooth);
+        transform.eulerAngles = new Vector3(Mathf.Clamp(mouseY,-89,89), mouseX, 0);
+    }
     public void Init()
     {
         TargetPlayer();
@@ -31,30 +51,13 @@ public class CameraFollow : MonoBehaviour
         _camera.transform.DOShakePosition(timeDurationPositonStrength, _positonStrength);
         _camera.transform.DOShakeRotation(timeDurationRotationStrength, _rotationStrength);
     }
-    private void Update()
-    {
-        transform.position = Vector3.SmoothDamp(transform.position, target.position + offset, ref vecref, smooth);
-        transform.eulerAngles = new Vector3(mouseX,mouseY,0);
-
-    }
-    private void OnBossDeadth()
-    {
-        CameraFocus();
-        DOTween.To(() => Time.timeScale, x => Time.timeScale = 1, 0.1f, 0.4f).SetEase(Ease.InQuad).SetUpdate(true).OnComplete(() => { Time.timeScale = 1; });
-        this.DelayCall(2, () => { CameraDefault(); });
-    }
-    private void CameraDefault()
-    {
-        offset = new Vector3(0, 22, -28);
-        transform.eulerAngles = new Vector3(38, 0, 0);
-        SetSmooth(0.4f);
-    }
-    private void CameraFocus()
-    {
-        SetSmooth(0.6f);
-        offset = new Vector3(0, 6, -8.5f);
-        transform.eulerAngles = new Vector3(30, 0, 0);
-    }
+    //private void OnBossDeadth()
+    //{
+    //    CameraFocus();
+    //    DOTween.To(() => Time.timeScale, x => Time.timeScale = 1, 0.1f, 0.4f).SetEase(Ease.InQuad).SetUpdate(true).OnComplete(() => { Time.timeScale = 1; });
+    //    this.DelayCall(2, () => { CameraDefault(); });
+    //}
+    
     private void CameraChangeTarget(Transform target)
     {
         this.target = target;
@@ -70,5 +73,11 @@ public class CameraFollow : MonoBehaviour
     private void SetSmooth(float value)
     {
         smooth = value;
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position, transform.position +new Vector3(transform.forward.x,0, transform.forward.z).normalized);
+
     }
 }

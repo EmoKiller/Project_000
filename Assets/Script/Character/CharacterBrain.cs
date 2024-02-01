@@ -8,12 +8,11 @@ using UnityEngine.UIElements;
 
 public class CharacterBrain : SerializedMonoBehaviour, IDamageAble, IMoveAble 
 {
-    [field: SerializeField] public MeshAgent agent { get; set; }
-    [field: SerializeField] public Transform directionTarget { get; set; }
-    [field: SerializeField] public SlashCollider slashCollider { get; set; }
-
-    [SerializeField] protected CharacterAnimator _characterAnimator;
-    [SerializeField] protected CharacterAttribute _characterAttribute;
+    [field: SerializeField] public MeshAgent Agent { get; set; }
+    [field: SerializeField] public Transform DirectionTarget { get; set; }
+    [field: SerializeField] public SlashCollider SlashCollider { get; set; }
+    [field: SerializeField] public CharacterAnimator CharacterAnimator { get; set; }
+    [field: SerializeField] public CharacterAttribute CharacterAttribute { get; set; }
     [field: SerializeField] public float MaxHealth { get; set; } = 100f;
     [field: SerializeField] public float CurrentHealth { get; set; } = 100f;
     [field: SerializeField] public virtual bool Alive { get; }
@@ -35,15 +34,15 @@ public class CharacterBrain : SerializedMonoBehaviour, IDamageAble, IMoveAble
     [Button]
     public void MoveDestination(Vector3 positon, UnityAction action = null)
     {
-        agent.MoveToDestination(positon);
-        if (agent.IsMove == true) return;
+        Agent.MoveToDestination(positon);
+        if (Agent.IsMove == true) return;
         StartCoroutine(CheckDestination(action));
     }
     public void DashMoveDirection(Vector3 position)
     {
-        if (agent.IsMove == true) return;
-        agent.SetSpeed(10);
-        if (agent.AgentBody.Raycast(position, out NavMeshHit raycastHit))
+        if (Agent.IsMove == true) return;
+        Agent.SetSpeed(10);
+        if (Agent.AgentBody.Raycast(position, out NavMeshHit raycastHit))
         {
             Debug.DrawLine(transform.position, raycastHit.position, Color.red);
             Debug.DrawLine(raycastHit.position, GameUtilities.MousePositionInWorld(), Color.blue);
@@ -54,9 +53,9 @@ public class CharacterBrain : SerializedMonoBehaviour, IDamageAble, IMoveAble
     }
     public void DashMoveDirectionReflect(Vector3 positon)
     {
-        if (agent.IsMove == true) return;
-        agent.SetSpeed(25);
-        if (agent.AgentBody.Raycast(positon, out NavMeshHit raycastHit))
+        if (Agent.IsMove == true) return;
+        Agent.SetSpeed(25);
+        if (Agent.AgentBody.Raycast(positon, out NavMeshHit raycastHit))
         {
             float distance = Vector3.Distance(transform.position, positon);
             float distanceReflect = distance - Vector3.Distance(transform.position, raycastHit.position);
@@ -71,11 +70,11 @@ public class CharacterBrain : SerializedMonoBehaviour, IDamageAble, IMoveAble
     }
     IEnumerator CheckDestination(UnityAction action = null)
     {
-        agent.IsMove = true;
+        Agent.IsMove = true;
         yield return new WaitUntil(() => CheckLastPath() || !Alive);
-        agent.AgentBody.isStopped = true;
-        agent.IsMove = false;
-        agent.SetSpeed(4);
+        Agent.AgentBody.isStopped = true;
+        Agent.IsMove = false;
+        Agent.SetSpeed(4);
         action?.Invoke();
     }
     public void RotateDirection(Vector3 direction)
@@ -84,12 +83,12 @@ public class CharacterBrain : SerializedMonoBehaviour, IDamageAble, IMoveAble
     }
     protected bool CheckLastPath()
     {
-        return Vector3.Distance(transform.position, agent.LastPath) <= agent.AgentBody.radius;
+        return Vector3.Distance(transform.position, Agent.LastPath) <= Agent.AgentBody.radius;
     }
     #endregion
 
     protected float GetDistanceToTarget()
     {
-        return Vector3.Distance(transform.position, directionTarget.position);
+        return Vector3.Distance(transform.position, DirectionTarget.position);
     }
 }

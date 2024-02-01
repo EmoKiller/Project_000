@@ -1,18 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    PlayerControl playerControl;
+    [SerializeField] Vector2 movementInput;
+    public Vector2 MovementInput
     {
-        
+        get { return movementInput; }
     }
-
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        
+    }
+    private void OnEnable()
+    {
+        if (playerControl == null)
+        {
+            playerControl = new PlayerControl();
+
+            playerControl.PlayerMovement.Movement.performed += i => movementInput = i.ReadValue<Vector2>();
+            
+        }
+        playerControl.Enable();
+    }
+    private void OnDisable()
+    {
+        playerControl.Disable();
+    }
+    private void Update()
+    {
+        //Debug.Log(playerControl.PlayerMovement.Movement.actionMap);
     }
 }

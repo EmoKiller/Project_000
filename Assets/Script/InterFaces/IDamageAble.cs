@@ -4,7 +4,7 @@ using UnityEngine;
 
 public interface IDamageAble 
 {
-     SlashCollider slashCollider { get; set; }
+     SlashCollider SlashCollider { get; set; }
     float MaxHealth { get; set; }
     float CurrentHealth { get; set; }
     bool Alive { get; }
