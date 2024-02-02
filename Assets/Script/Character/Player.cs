@@ -31,13 +31,15 @@ public class Player : CharacterBrain
     {
         return InputManager.MovementInput;
     }
-    public void PlayerMove()
+    public void PlayerMove() 
     {
         if (MovementInput().x != 0 || MovementInput().y != 0)
         {
             Vector3 vec = CameraFollow.instance.transform.forward;
             vec.y = 0;
-            Agent.MoveToDirection(vec.normalized * MovementInput().y + CameraFollow.instance.transform.right * MovementInput().x);
+            Vector3 move = vec.normalized * (MovementInput().y * Time.deltaTime) + CameraFollow.instance.transform.right * (MovementInput().x * Time.deltaTime);
+            Agent.MoveToDirection(move) ;
+            CharacterAnimator.SetFloat("Vertical",1);
         }
         if (MovementInput().y == 0)
         {

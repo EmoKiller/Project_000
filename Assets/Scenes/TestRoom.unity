@@ -32863,11 +32863,11 @@ GameObject:
   - component: {fileID: 5866666021315219356}
   - component: {fileID: 5866666021315219355}
   - component: {fileID: 5866666021315219353}
+  - component: {fileID: 5866666021315219361}
   - component: {fileID: 5866666021315219354}
   - component: {fileID: 5866666021315219359}
   - component: {fileID: 5866666021315219358}
   - component: {fileID: 5866666021315219360}
-  - component: {fileID: 5866666021315219361}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
